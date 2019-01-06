@@ -114,7 +114,7 @@ void doFFTOut(kiss_fft_scalar* in) {    // float in[N] must be global for this t
     printf("not enough memory?\n");
     exit(-1);
   }
-  for(idx=10; idx<127+10; idx++) {         // for 512 N-size fft this is half available real usable fft output or 312.5 thru 4250Hz 
+  for(idx=10; idx<144+10; idx++) {         // for 512 N-size fft this is half available real usable fft output or 312.5 thru 4250Hz 
     if (abs(out[idx].r)+abs(out[idx].i) > threshold) {
       long col = ((uint8_t)abs(out[idx].r))<<16 | ((uint8_t)abs(out[idx].i));      // real and imaginary in the green and blue leds
       strip.setPixelColor(idx-10,col);                                              // REAL is GREEN, IMAG BLUE
